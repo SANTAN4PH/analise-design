@@ -4,8 +4,8 @@ Design System da **Escola Educarte**, documentado no **Storybook**. O projeto na
 
 O Storybook é a ponte Dev-Designer: cada componente aparece isolado, com controles, estados, props e comportamento responsivo.
 
-- **Repositório:** _cole aqui o link do seu repositório no GitHub_
-- **Storybook publicado:** _cole aqui o link do GitHub Pages (veja "Publicar" abaixo)_
+- **Repositório:** https://github.com/SANTAN4PH/analise-design
+- **Storybook publicado:** [_cole aqui o link do GitHub Pages (veja "Publicar" abaixo)_](https://santan4ph.github.io/analise-design/?path=/docs/introdu%C3%A7%C3%A3o-bem-vindo--docs)
 
 ---
 
