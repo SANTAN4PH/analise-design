@@ -1,0 +1,32 @@
+.ed-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  color: var(--azul-secundario);
+  background: transparent;
+  border: 0;
+  border-radius: var(--raio-pequeno);
+  cursor: pointer;
+  transition: color var(--transicao-rapida), background-color var(--transicao-rapida);
+}
+
+.ed-icon-btn:hover:not(:disabled) {
+  color: var(--cor-principal);
+}
+
+.ed-icon-btn:focus-visible {
+  outline: 3px solid var(--azul-destaque);
+  outline-offset: 2px;
+}
+
+.ed-icon-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ed-icon-btn[hidden] {
+  display: none;
+}

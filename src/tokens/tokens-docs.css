@@ -1,0 +1,58 @@
+/* Estilos usados apenas pelas páginas de documentação dos tokens. */
+.tk-lista {
+  display: grid;
+  gap: var(--espacamento-medio);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tk-cor {
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-medio);
+}
+
+.tk-cor__amostra {
+  flex: none;
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--azul-secundario);
+  border-radius: var(--raio-medio);
+}
+
+.tk-cor__info {
+  display: grid;
+  gap: 2px;
+  font-size: var(--tamanho-pequeno);
+}
+
+.tk-cor__info small {
+  color: var(--azul-secundario);
+}
+
+.tk-tipo {
+  display: grid;
+  gap: var(--espacamento-pequeno);
+  padding-bottom: var(--espacamento-medio);
+  border-bottom: 1px solid var(--cor-superficie);
+}
+
+.tk-tipo code,
+.tk-espaco code,
+.tk-cor code {
+  font-size: var(--tamanho-pequeno);
+  color: var(--azul-destaque);
+}
+
+.tk-espaco {
+  display: grid;
+  gap: var(--espacamento-pequeno);
+}
+
+.tk-espaco__barra {
+  display: block;
+  height: 16px;
+  background: var(--cor-principal);
+  border-radius: 2px;
+}

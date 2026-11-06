@@ -1,0 +1,87 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Fase 1 - Auditoria/Auditoria de Interface" />
+
+# Fase 1: Auditoria e Caos
+
+**Site analisado:** [escolaeducarte.com.br](https://escolaeducarte.com.br)
+
+## Análise de interface: inconsistências encontradas
+
+### Cabeçalho (header)
+
+1. No botão "Lista de material - 2026", o espaçamento superior é diferente do inferior, o que passa impressão de desorganização.
+2. Há **3 tons de azul diferentes** sem necessidade, o que mostra inconsistência no uso da paleta.
+3. Os botões estão organizados em **3 linhas**, causando desconforto visual.
+4. O botão "Lista de material - 2026" tem, no estado de hover, um azul diferente dos demais botões principais.
+
+### Rodapé (footer)
+
+1. Os botões que abrem outras opções **não diferenciam** o estado normal do estado de hover.
+2. Os links do rodapé têm **3 comportamentos de hover**: deslocar para a direita, ficar laranja e ficar levemente azulado.
+
+### Contato
+
+A regra "botão principal laranja, secundário azul" é quebrada: só o azul é usado, sem diferenciar o botão principal dos secundários.
+
+### Início e Segmentos
+
+- Os botões dos cards da área "Início" têm **3 variações de hover**: fundo branco, laranja e laranja escuro.
+- Na área "Segmentos", botões soltos na rolagem têm estados normais e hover diferentes entre si (bege, vinho e azul que viram laranja).
+
+## Cálculo da dívida: 5 componentes com variações desnecessárias
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Componente no site atual</th>
+      <th>Variações desnecessárias encontradas</th>
+      <th>Solução no Design System</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Botões de navegação do cabeçalho</td>
+      <td>3 tons de azul, hover azul divergente, espaçamento irregular e 3 linhas</td>
+      <td>Organismo <strong>Barra de Navegação</strong>: linha única, um azul, um hover</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Links do rodapé</td>
+      <td>3 hovers (deslocar, laranja, azulado) e botões sem hover perceptível</td>
+      <td>Organismo <strong>Rodapé</strong>: hover único (sublinhado)</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Botões da área de contato</td>
+      <td>Sem distinção entre principal (laranja) e secundário (azul)</td>
+      <td>Átomo <strong>Botão</strong>: variantes <code>primario</code> e <code>secundario</code></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Botões dos cards da home (SAIBA MAIS)</td>
+      <td>3 hovers (fundo branco, laranja, laranja escuro)</td>
+      <td>Organismo <strong>Card de Segmento</strong>: azul-marinho com hover laranja</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Botões soltos de "Segmentos" (Equipe, Estrutura, Eventos)</td>
+      <td>Estados normais e hovers diferentes entre si</td>
+      <td>Átomo <strong>Botão</strong>: mesma regra de hover em qualquer contexto</td>
+    </tr>
+  </tbody>
+</table>
+
+## Inventário visual: estado inicial
+
+Capturas dos padrões de botões e inputs encontrados no site, usadas como referência do estado inicial.
+
+<img src="fase1/auditoria-1.png" alt="Auditoria, página 1: inconsistências do cabeçalho" style={{ maxWidth: '100%', border: '1px solid #ccd5df', marginBottom: 16 }} />
+<img src="fase1/auditoria-2.png" alt="Auditoria, página 2: rodapé" style={{ maxWidth: '100%', border: '1px solid #ccd5df', marginBottom: 16 }} />
+<img src="fase1/auditoria-3.png" alt="Auditoria, página 3: contato e cards da home" style={{ maxWidth: '100%', border: '1px solid #ccd5df', marginBottom: 16 }} />
+<img src="fase1/auditoria-4.png" alt="Auditoria, página 4: botões de Segmentos" style={{ maxWidth: '100%', border: '1px solid #ccd5df', marginBottom: 16 }} />
+<img src="fase1/auditoria-5.png" alt="Auditoria, página 5: botão de estrutura" style={{ maxWidth: '100%', border: '1px solid #ccd5df', marginBottom: 16 }} />
+
+O documento original da fase está em `docs/fases/fase-1-auditoria-e-caos.pdf` no repositório.

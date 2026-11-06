@@ -1,0 +1,82 @@
+.ed-rodape-host {
+  container-type: inline-size;
+  container-name: rodape;
+}
+
+.ed-rodape {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--espacamento-extra-grande);
+  padding: var(--espacamento-extra-grande);
+  color: var(--branco);
+  background: var(--cor-secundaria);
+}
+
+.ed-rodape__marca {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-pequeno);
+  max-width: 360px;
+}
+
+.ed-rodape__nome {
+  font-size: var(--tamanho-h4);
+}
+
+.ed-rodape__descricao {
+  margin: 0;
+  font-size: var(--tamanho-pequeno);
+}
+
+.ed-rodape__copyright {
+  font-size: var(--tamanho-pequeno);
+  opacity: 0.85;
+}
+
+.ed-rodape__grupos {
+  display: flex;
+  gap: calc(var(--espacamento-extra-grande) * 2);
+}
+
+.ed-rodape__titulo {
+  margin: 0 0 var(--espacamento-pequeno);
+  font-size: var(--tamanho-pequeno);
+  font-weight: var(--peso-negrito);
+  color: var(--branco);
+}
+
+.ed-rodape__lista {
+  display: grid;
+  gap: var(--espacamento-pequeno);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Hover único: sublinhado. Sem deslocar, sem trocar de cor. */
+.ed-rodape__link {
+  font-size: var(--tamanho-pequeno);
+  color: var(--branco);
+  text-decoration: none;
+}
+
+.ed-rodape__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.ed-rodape__link:focus-visible {
+  outline: 3px solid var(--branco);
+  outline-offset: 2px;
+}
+
+@container rodape (max-width: 992px) {
+  .ed-rodape {
+    flex-direction: column;
+  }
+
+  .ed-rodape__grupos {
+    flex-direction: column;
+    gap: var(--espacamento-grande);
+  }
+}

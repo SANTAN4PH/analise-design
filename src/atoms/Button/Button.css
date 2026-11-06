@@ -1,0 +1,69 @@
+.ed-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacamento-pequeno);
+  padding: var(--espacamento-pequeno) var(--espacamento-grande);
+  font-family: inherit;
+  font-weight: var(--peso-negrito);
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--raio-pequeno);
+  cursor: pointer;
+  transition: background-color var(--transicao-rapida), border-color var(--transicao-rapida);
+}
+
+/* Tamanhos */
+.ed-btn--sm {
+  min-height: 36px;
+  font-size: var(--tamanho-pequeno);
+}
+
+.ed-btn--md {
+  min-height: 44px;
+  font-size: var(--tamanho-corpo);
+}
+
+.ed-btn--bloco {
+  display: flex;
+  width: 100%;
+}
+
+/* Variantes: principal = laranja, secundário = azul-marinho */
+.ed-btn--primario {
+  color: var(--branco);
+  background: var(--cor-principal);
+  border-color: var(--cor-principal);
+}
+
+.ed-btn--secundario {
+  color: var(--branco);
+  background: var(--cor-secundaria);
+  border-color: var(--cor-secundaria);
+}
+
+/* Hover unificado: troca entre os dois tons da marca (sem tons extras) */
+.ed-btn--primario:hover:not(:disabled):not([aria-disabled='true']) {
+  background: var(--cor-secundaria);
+  border-color: var(--cor-secundaria);
+}
+
+.ed-btn--secundario:hover:not(:disabled):not([aria-disabled='true']) {
+  background: var(--cor-principal);
+  border-color: var(--cor-principal);
+}
+
+/* Foco por teclado */
+.ed-btn:focus-visible {
+  outline: 3px solid var(--azul-destaque);
+  outline-offset: 2px;
+}
+
+/* Desabilitado */
+.ed-btn:disabled,
+.ed-btn[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

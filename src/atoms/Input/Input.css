@@ -1,0 +1,68 @@
+/* A ordem das regras abaixo define a prioridade (todas têm a mesma especificidade):
+   normal < hover < preenchido < foco < erro < desabilitado */
+.ed-input {
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-pequeno);
+  min-height: 48px;
+  padding: 0 var(--espacamento-medio);
+  background: var(--branco);
+  border: 2px solid var(--azul-secundario);
+  border-radius: var(--raio-medio);
+  transition: border-color var(--transicao-rapida), box-shadow var(--transicao-rapida);
+}
+
+.ed-input__campo {
+  flex: 1;
+  min-width: 0;
+  padding: var(--espacamento-pequeno) 0;
+  font: inherit;
+  color: var(--cor-secundaria);
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+
+.ed-input__campo::placeholder {
+  color: color-mix(in srgb, var(--azul-secundario) 75%, var(--branco));
+}
+
+/* Hover */
+.ed-input:hover:where(:not(.is-desabilitado)) {
+  border-color: var(--cor-secundaria);
+}
+
+/* Preenchido (usado pela barra de busca) */
+.ed-input.is-preenchido {
+  border-width: 1px;
+  border-color: var(--cor-principal);
+}
+
+/* Foco */
+.ed-input:focus-within {
+  border-width: 2px;
+  border-color: var(--azul-destaque);
+  box-shadow: var(--foco-anel);
+}
+
+/* Erro */
+.ed-input.is-erro {
+  border-width: 2px;
+  border-color: var(--cor-erro);
+}
+
+.ed-input.is-erro:focus-within {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--cor-erro) 25%, transparent);
+}
+
+/* Desabilitado */
+.ed-input.is-desabilitado {
+  background: var(--cor-superficie);
+  border-color: color-mix(in srgb, var(--azul-secundario) 35%, var(--branco));
+  cursor: not-allowed;
+}
+
+.ed-input__campo:disabled {
+  color: var(--azul-secundario);
+  cursor: not-allowed;
+}

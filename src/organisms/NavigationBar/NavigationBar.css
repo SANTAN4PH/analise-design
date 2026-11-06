@@ -1,0 +1,125 @@
+/* O host é o "container": o layout responde à largura do próprio componente,
+   então ele se comporta igual no site, no Storybook e nos testes. */
+.ed-navbar-host {
+  container-type: inline-size;
+  container-name: navbar;
+  background: var(--branco);
+  border-bottom: 1px solid var(--azul-secundario);
+}
+
+/* Desktop (> 992px): tudo em uma única linha (corrige as 3 linhas da Fase 1) */
+.ed-navbar {
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-extra-grande);
+  padding: var(--espacamento-medio) var(--espacamento-extra-grande);
+}
+
+.ed-navbar__logo {
+  flex: none;
+  font-size: var(--tamanho-h4);
+  font-weight: var(--peso-negrito);
+  color: var(--cor-secundaria);
+  text-decoration: none;
+}
+
+.ed-navbar__logo:focus-visible,
+.ed-navbar__link:focus-visible {
+  outline: 3px solid var(--azul-destaque);
+  outline-offset: 2px;
+}
+
+/* Em telas largas a gaveta some do layout e seus filhos entram direto na linha */
+.ed-navbar__gaveta {
+  display: contents;
+}
+
+.ed-navbar__nav {
+  flex: 1;
+}
+
+.ed-navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-grande);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Um único tom de azul nos links; um único hover/ativo (laranja + sublinhado) */
+.ed-navbar__link {
+  display: inline-block;
+  padding: var(--espacamento-pequeno) 2px;
+  font-size: var(--tamanho-pequeno);
+  font-weight: var(--peso-semi-negrito);
+  color: var(--cor-secundaria);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transicao-rapida), border-color var(--transicao-rapida);
+}
+
+.ed-navbar__link:hover,
+.ed-navbar__link[aria-current='page'] {
+  color: var(--cor-principal);
+  border-bottom-color: var(--cor-principal);
+}
+
+.ed-navbar__busca {
+  flex: none;
+  width: 280px;
+}
+
+.ed-navbar .ed-navbar__toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  color: var(--cor-secundaria);
+  border: 1px solid var(--cor-secundaria);
+}
+
+/* Mobile (≤ 992px): menu em gaveta vertical, itens em 100% da largura.
+   Container queries não aceitam variáveis CSS na condição: 992px é fixo. */
+@container navbar (max-width: 992px) {
+  .ed-navbar {
+    flex-wrap: wrap;
+    gap: var(--espacamento-medio);
+    padding: var(--espacamento-medio);
+  }
+
+  .ed-navbar .ed-navbar__toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .ed-navbar__gaveta {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    gap: var(--espacamento-medio);
+  }
+
+  .ed-navbar.is-aberto .ed-navbar__gaveta {
+    display: flex;
+  }
+
+  .ed-navbar__nav {
+    flex: none;
+    width: 100%;
+  }
+
+  .ed-navbar__menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .ed-navbar__link {
+    display: block;
+    padding: var(--espacamento-pequeno) 0;
+  }
+
+  .ed-navbar__busca {
+    width: 100%;
+  }
+}

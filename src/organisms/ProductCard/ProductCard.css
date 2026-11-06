@@ -1,0 +1,61 @@
+.ed-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--branco);
+  border: 1px solid var(--azul-secundario);
+  border-radius: var(--raio-pequeno);
+}
+
+.ed-card__topo {
+  padding: var(--espacamento-medio);
+  text-align: center;
+  background: var(--cor-principal);
+}
+
+.ed-card__titulo {
+  margin: 0;
+  font-size: var(--tamanho-h4);
+  font-weight: var(--peso-negrito);
+  color: var(--branco);
+}
+
+/* O texto ocupa o espaço livre: os botões ficam alinhados na base
+   mesmo quando as descrições têm tamanhos diferentes. */
+.ed-card__corpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--espacamento-grande);
+  padding: var(--espacamento-grande);
+}
+
+.ed-card__texto {
+  flex: 1;
+  margin: 0;
+  font-size: var(--tamanho-pequeno);
+  color: var(--azul-destaque);
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Grid: o host é o container, então responde à largura do componente */
+.ed-card-grid-host {
+  container-type: inline-size;
+  container-name: cards;
+}
+
+.ed-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--espacamento-grande);
+  align-items: stretch;
+}
+
+/* ≤ 992px: coluna única, rolagem vertical natural */
+@container cards (max-width: 992px) {
+  .ed-card-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

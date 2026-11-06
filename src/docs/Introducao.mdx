@@ -1,0 +1,75 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introdução/Bem-vindo" />
+
+# Educarte Design System
+
+Biblioteca de componentes e tokens criada a partir da **auditoria de interface do site
+[escolaeducarte.com.br](https://escolaeducarte.com.br)**. O objetivo é eliminar a dívida de design
+encontrada na Fase 1 (cores, botões e espaçamentos inconsistentes) e entregar uma base única,
+documentada e testável para designers e desenvolvedores: a **ponte Dev-Designer**.
+
+Este Storybook é o site de documentação do sistema: cada componente aparece **isolado**, com
+controles interativos, estados, propriedades (props) e comportamento responsivo.
+
+## Mapa do Atomic Design
+
+<table>
+  <thead>
+    <tr>
+      <th>Fase</th>
+      <th>O que contém</th>
+      <th>Onde ver (menu lateral)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1. Auditoria e Caos</td>
+      <td>Inconsistências de UI, cálculo da dívida (5 componentes) e inventário visual</td>
+      <td>Fase 1 - Auditoria</td>
+    </tr>
+    <tr>
+      <td>2. Átomos e Design Tokens</td>
+      <td>Paleta, escala tipográfica, espaçamentos e <code>variables.css</code>; Botão, Input, Label, Ícone, Botão de Ícone</td>
+      <td>Fase 2 - Design Tokens / Fase 2 - Átomos</td>
+    </tr>
+    <tr>
+      <td>3. Moléculas Funcionais</td>
+      <td>Campo de Formulário, Campo de Senha e Barra de Busca, com hover, focus, disabled e erro</td>
+      <td>Fase 3 - Moléculas</td>
+    </tr>
+    <tr>
+      <td>4. Organismos e Reuso</td>
+      <td>Barra de Navegação, Card de Segmento, Hero e Rodapé, com props e responsividade</td>
+      <td>Fase 4 - Organismos</td>
+    </tr>
+    <tr>
+      <td>5. Do Blueprint à Página</td>
+      <td>Template (esqueleto com slots) e Página Educarte com dados reais</td>
+      <td>Fase 5 - Templates e Páginas</td>
+    </tr>
+  </tbody>
+</table>
+
+## Princípios do sistema
+
+- **Single Source of Truth:** toda cor, fonte e espaçamento vem de `src/tokens/variables.css`. Nenhum componente usa valores fixos.
+- **Uma regra de cor para ações:** principal = laranja (`--cor-principal`), secundária = azul-marinho (`--cor-secundaria`).
+- **Um único hover por tipo de componente:** botões trocam entre os dois tons da marca; links de navegação ficam laranja com sublinhado; links do rodapé ganham sublinhado.
+- **Componentes independentes:** os organismos respondem à largura do **próprio componente** (container query, ponto de quebra em 992px), não só à da janela.
+- **Responsabilidade única (SOLID):** cada molécula faz uma coisa bem definida (coletar texto, alternar senha, anunciar busca).
+
+## Como explorar
+
+1. Abra um componente no menu lateral e use a aba **Docs** para ver a descrição, as props e todas as stories.
+2. Na aba **Canvas**, altere as props no painel **Controls**.
+3. Use o painel **Accessibility** para ver o resultado da checagem de acessibilidade.
+4. As stories marcadas com **Teste** têm uma interação automática; veja o passo a passo no painel **Interactions**.
+
+## Acessibilidade: ponto de atenção da paleta
+
+O texto branco sobre o laranja da marca (`#F05B29`) tem contraste de aproximadamente **3,4:1**.
+Isso atende ao nível AA apenas para texto grande (a partir de 24px, ou 18,66px em negrito) e fica abaixo
+dos 4,5:1 exigidos para texto pequeno. A página **Fase 2 - Design Tokens / Visão geral** mostra o contraste de cada cor.
+Por isso o painel de acessibilidade aponta esses casos como aviso. Se a marca puder escurecer o laranja,
+basta mudar `--cor-principal` em um único lugar.

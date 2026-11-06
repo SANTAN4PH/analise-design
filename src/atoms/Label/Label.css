@@ -1,0 +1,9 @@
+.ed-label {
+  font-size: var(--tamanho-corpo);
+  font-weight: var(--peso-semi-negrito);
+  color: var(--cor-secundaria);
+}
+
+.ed-label__obrigatorio {
+  color: var(--cor-erro);
+}

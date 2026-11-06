@@ -1,0 +1,19 @@
+/* Compartilhado por Campo de Formulário e Campo de Senha */
+.ed-campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-pequeno);
+  width: 100%;
+  max-width: 420px;
+}
+
+.ed-campo__mensagem {
+  margin: 0;
+  font-size: var(--tamanho-pequeno);
+  color: var(--azul-secundario);
+}
+
+.ed-campo__mensagem.is-erro {
+  font-weight: var(--peso-medio);
+  color: var(--cor-erro);
+}

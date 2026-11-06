@@ -1,0 +1,22 @@
+{
+  "name": "educarte-design-system",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Design System da Escola Educarte documentado no Storybook (Atomic Design: tokens, átomos, moléculas, organismos, templates e página).",
+  "scripts": {
+    "storybook": "storybook dev -p 6006 --config-dir storybook-config",
+    "build-storybook": "storybook build --config-dir storybook-config",
+    "serve-static": "npx --yes http-server storybook-static -p 6006"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.3.0",
+    "@storybook/addon-docs": "^10.3.0",
+    "@storybook/html-vite": "^10.3.0",
+    "storybook": "^10.3.0",
+    "vite": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Educarte Design System - Single Source of Truth
+   Fase 2: tokens originais. Os blocos "CORES DE APOIO" e "RAIOS E EFEITOS"
+   foram adicionados nas Fases 3 a 5 para cobrir estados (erro, desabilitado,
+   foco) que a paleta original não previa.
+   ========================================================================== */
+:root {
+  /* CORES */
+  --cor-principal: #F05B29;
+  --cor-secundaria: #013668;
+  --azul-secundario: #486C8E;
+  --azul-destaque: #1D67CD;
+  --branco: #FFFFFF;
+
+  /* CORES DE APOIO */
+  --cor-erro: #C62828;
+  --cor-superficie: #F4F7FA;
+
+  /* TIPOGRAFIA */
+  --familia-tipografica: 'Montserrat', sans-serif;
+
+  /* ESCALA TIPOGRÁFICA */
+  --tamanho-h1: 40px;
+  --tamanho-h2: 32px;
+  --tamanho-h3: 24px;
+  --tamanho-h4: 20px;
+  --tamanho-corpo: 16px;
+  --tamanho-pequeno: 14px;
+
+  /* PESOS TIPOGRÁFICOS */
+  --peso-regular: 400;
+  --peso-medio: 500;
+  --peso-semi-negrito: 600;
+  --peso-negrito: 700;
+
+  /* ESCALA DE ESPAÇAMENTO */
+  --espacamento-pequeno: 8px;
+  --espacamento-medio: 16px;
+  --espacamento-grande: 24px;
+  --espacamento-extra-grande: 32px;
+
+  /* RAIOS E EFEITOS */
+  --raio-pequeno: 8px;
+  --raio-medio: 12px;
+  --transicao-rapida: 150ms ease-in-out;
+  --foco-anel: 0 0 0 3px color-mix(in srgb, var(--azul-destaque) 25%, transparent);
+}

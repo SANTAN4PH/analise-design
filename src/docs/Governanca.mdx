@@ -1,0 +1,31 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Governança/Guia de Contribuição" />
+
+# Governança do sistema
+
+Regras para que o sistema não volte ao caos auditado na Fase 1.
+
+## Regras de ouro
+
+1. **Nada de valores soltos.** Cores, fontes, tamanhos, espaçamentos e raios vêm de `variables.css`. Se faltar um token, crie-o lá primeiro e documente na página de tokens.
+2. **Antes de criar uma variação, tente reutilizar.** Uma nova variante de botão, card ou link precisa de justificativa de design. O padrão é usar o que já existe.
+3. **Um hover por tipo de componente.** Botões: troca entre laranja e azul-marinho. Links de navegação: laranja com sublinhado. Links do rodapé: sublinhado.
+4. **Todo componente tem foco visível** por teclado (`:focus-visible`) e estado desabilitado quando fizer sentido.
+5. **Responsividade no componente.** Use container queries com o ponto de quebra de 992px.
+
+## Checklist para adicionar ou alterar um componente
+
+- Está na pasta certa do Atomic Design (`atoms`, `molecules`, `organisms`, `templates`, `pages`).
+- Tem arquivo `.stories.js` com título no padrão `Fase N - Grupo/Nome`.
+- As props estão documentadas em `argTypes` (descrição, tipo e valor padrão).
+- Há uma story para cada estado: normal, hover, focus, disabled e erro (quando aplicável).
+- O componente funciona em largura mobile (≤ 992px) e desktop.
+- O painel **Accessibility** não mostra problemas novos.
+- Classes CSS usam o prefixo `ed-` e só consomem tokens.
+
+## Nomenclatura
+
+- Tokens em português, em minúsculas e com hifens: `--cor-principal`, `--espacamento-medio`.
+- Classes no padrão `ed-bloco__elemento` e modificadores `ed-bloco--variante` ou `is-estado`.
+- Props dos componentes em português, em camelCase: `rotulo`, `larguraTotal`, `desabilitado`.
